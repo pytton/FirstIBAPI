@@ -1,6 +1,7 @@
 #include <conio.h>
 #include <iostream>
 #include <iomanip> //for setprecision
+#include <fstream>	//for ofstream out("order.out");
 
 #include <Windows.h>
 
@@ -103,10 +104,8 @@ int StartTWSConn()
 	int  tickerID = 100;
 	pClientTWS->reqMktData(tickerID, spyContract, "", false);
 
-
-
 	using namespace std;
-
+	ofstream out("output.out");
 	for (int i = 0; i < 20; i++)
 	{
 		int Wait = 250;
@@ -126,6 +125,13 @@ int StartTWSConn()
 		cout << "bid: " << bid << endl;
 		cout << "ask size: " << askSize << endl;
 		cout << "bid size: " << bidSize << endl;
+
+		out << setprecision(15);
+
+		out << "ask: " << ask << endl;
+		out << "bid: " << bid << endl;
+		out << "ask size: " << askSize << endl;
+		out << "bid size: " << bidSize << endl;
 
 		//cout << "time: " << currentTime << endl;
 	}

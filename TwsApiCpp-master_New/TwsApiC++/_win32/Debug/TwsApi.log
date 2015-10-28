@@ -1,25 +1,25 @@
-﻿Build started 10/23/2015 00:27:55.
-     1>Project "C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\TwsApiC++\_win32\TwsApi.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 10/27/2015 21:01:08.
+     1>Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\_win32\TwsApi.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\Src /I..\Api /I..\..\source\PosixClient\Shared /I..\..\source\PosixClient\src /Z7 /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo".\Debug/" /Fd".\Debug/TwsApi.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Src\TwsApiL0.cpp
          TwsApiL0.cpp
-     1>C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(38): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-     1>C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(47): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\michael\dropbox\code\windows\twsapicpp-master_new\source\posixclient\src\EPosixClientSocketPlatform.h(14): warning C4005: 'EISCONN': macro redefinition
+     1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(38): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(47): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\michael\code\firstibapi\twsapicpp-master_new\source\posixclient\src\EPosixClientSocketPlatform.h(14): warning C4005: 'EISCONN': macro redefinition
          C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\errno.h(97): note: see previous definition of 'EISCONN'
-     1>c:\users\michael\dropbox\code\windows\twsapicpp-master_new\source\posixclient\src\EPosixClientSocketPlatform.h(15): warning C4005: 'EWOULDBLOCK': macro redefinition
+     1>c:\users\michael\code\firstibapi\twsapicpp-master_new\source\posixclient\src\EPosixClientSocketPlatform.h(15): warning C4005: 'EWOULDBLOCK': macro redefinition
          C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\errno.h(124): note: see previous definition of 'EWOULDBLOCK'
-     1>c:\users\michael\dropbox\code\windows\twsapicpp-master_new\source\posixclient\src\EPosixClientSocketPlatform.h(16): warning C4005: 'ECONNREFUSED': macro redefinition
+     1>c:\users\michael\code\firstibapi\twsapicpp-master_new\source\posixclient\src\EPosixClientSocketPlatform.h(16): warning C4005: 'ECONNREFUSED': macro redefinition
          C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\errno.h(91): note: see previous definition of 'ECONNREFUSED'
-     1>C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\source\PosixClient\src\EPosixClientSocket.cpp(61): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+     1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\src\EPosixClientSocket.cpp(61): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
          C:\Program Files (x86)\Windows Kits\8.1\Include\um\WinSock2.h(1850): note: see declaration of 'inet_addr'
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1357,5): warning MSB8012: TargetPath(C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\TwsApiC++\_win32\.\Debug\TwsApi.lib) does not match the Library's OutputFile property value (C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\TwsApiC++\Api\TwsApiD.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1357,5): warning MSB8012: TargetPath(C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\_win32\.\Debug\TwsApi.lib) does not match the Library's OutputFile property value (C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Api\TwsApiD.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1359,5): warning MSB8012: TargetName(TwsApi) does not match the Library's OutputFile property value (TwsApiD). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"..\Api\TwsApiD.lib" /NOLOGO .\Debug/TwsApiL0.obj
-         TwsApi.vcxproj -> C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\TwsApiC++\_win32\.\Debug\TwsApi.lib
-     1>Done Building Project "C:\Users\Michael\Dropbox\Code\windows\TwsApiCpp-master_New\TwsApiC++\_win32\TwsApi.vcxproj" (Rebuild target(s)).
+         TwsApi.vcxproj -> C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\_win32\.\Debug\TwsApi.lib
+     1>Done Building Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\_win32\TwsApi.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.68
+Time Elapsed 00:00:02.48
