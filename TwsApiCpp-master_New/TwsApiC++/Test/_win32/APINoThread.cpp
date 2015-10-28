@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip> //for setprecision
 #include <fstream>	//for ofstream out("order.out");
+#include <time.h>       /* clock_t, clock, CLOCKS_PER_SEC */
 
 #include <Windows.h>
 
@@ -106,6 +107,10 @@ int StartTWSConn()
 
 	using namespace std;
 	ofstream out("output.out");
+
+	clock_t time;
+	time = clock();
+
 	for (int i = 0; i < 20; i++)
 	{
 		int Wait = 250;
@@ -118,6 +123,7 @@ int StartTWSConn()
 		double bidSize = twsReply->m_BidSize;
 		double askSize = twsReply->m_AskSize;
 		
+		time = clock();
 		//long currentTime = twsReply->currentTime(); //not working
 		cout << setprecision(15);
 
@@ -128,6 +134,7 @@ int StartTWSConn()
 
 		out << setprecision(15);
 
+		out << "time: " << time << endl;
 		out << "ask: " << ask << endl;
 		out << "bid: " << bid << endl;
 		out << "ask size: " << askSize << endl;
