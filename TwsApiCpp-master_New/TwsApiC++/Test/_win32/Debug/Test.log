@@ -1,10 +1,6 @@
-﻿Build started 10/27/2015 22:25:55.
-     1>Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Test\_win32\Test.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 10/28/2015 17:07:14.
+     1>Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Test\_win32\Test.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\..\Api /I..\..\..\source\PosixClient\Shared /Z7 /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo".\Debug/" /Fd".\Debug/vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Src\Empty.cpp
-         Empty.cpp
-     1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(38): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-     1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(47): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\..\Api /I..\..\..\source\PosixClient\Shared /Z7 /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo".\Debug/" /Fd".\Debug/vc140.pdb" /Gd /TP /analyze- /errorReport:prompt APINoThread.cpp
          APINoThread.cpp
      1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(38): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
@@ -14,8 +10,8 @@
          .\Debug/APINoThread.obj
          "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Api\TwsApiD.lib"
          Test.vcxproj -> C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Test\_win32\.\Debug\Test.exe
-     1>Done Building Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Test\_win32\Test.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Test\_win32\Test.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.16
+Time Elapsed 00:00:02.15
