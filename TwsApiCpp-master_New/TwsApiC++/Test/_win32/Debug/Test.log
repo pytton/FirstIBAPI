@@ -1,11 +1,6 @@
-﻿Build started 10/28/2015 20:55:50.
+﻿Build started 10/29/2015 00:35:24.
      1>Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Test\_win32\Test.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\..\Api /I..\..\..\source\PosixClient\Shared /Z7 /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo".\Debug/" /Fd".\Debug/vc140.pdb" /Gd /TP /analyze- /errorReport:prompt APINoThread.cpp
-         APINoThread.cpp
-     1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(38): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-     1>C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\source\PosixClient\Shared\IBString.h(47): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-       Link:
+     1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/Test.exe" /INCREMENTAL /NOLOGO odbc32.lib odbccp32.lib Ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:".\Debug\Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\Test.lib" /MACHINE:X86 /SAFESEH .\Debug/Empty.obj
          .\Debug/APINoThread.obj
          "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\Api\TwsApiD.lib"
@@ -14,4 +9,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.81
+Time Elapsed 00:00:01.65
