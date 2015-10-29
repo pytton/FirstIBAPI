@@ -1,210 +1,110 @@
-time: 768
+time: 259
 
 SPY
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 770
+ask: 1.0917
+bid: 1.09165
+ask size: 1183000
+bid size: 11683000
+time: 265
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 772
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1025
+ask: 1.5264
+time: 517
 
 SPY
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1027
-
-DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1031
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1287
-
-SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
+ask: 1.09175
+bid: 1.0917
+ask size: 1700000
 bid size: 1000000
-time: 1293
+time: 520
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1297
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1558
+ask: 1.5264
+time: 773
 
 SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
-bid size: 1000000
-time: 1583
+ask: 1.09175
+bid: 1.0917
+ask size: 10883000
+bid size: 2500000
+time: 776
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1595
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1861
+ask: 1.52635
+time: 1029
 
 SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
-bid size: 1000000
-time: 1878
+ask: 1.09175
+bid: 1.5262
+ask size: 2200000
+bid size: 10683000
+time: 1033
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 1891
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2154
+ask: 1.5262
+time: 1286
 
 SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
-bid size: 1000000
-time: 2159
+ask: 1.09175
+bid: 1.5262
+ask size: 8700000
+bid size: 6820000
+time: 1291
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2163
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2417
+ask: 1.5262
+time: 1544
 
 SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
-bid size: 1000000
-time: 2421
+ask: 1.0918
+bid: 1.5262
+ask size: 13983000
+bid size: 12883000
+time: 1548
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2424
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2679
+ask: 1.5263
+time: 1802
 
 SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
-bid size: 1000000
-time: 2683
+ask: 1.0918
+bid: 1.09175
+ask size: 2783000
+bid size: 5183000
+time: 1806
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2686
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2940
+ask: 1.5263
+time: 2059
 
 SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
-bid size: 1000000
-time: 2945
+ask: 1.0918
+bid: 1.09175
+ask size: 2283000
+bid size: 7683000
+time: 2063
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 2948
-
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 3202
+ask: 1.5263
+time: 2321
 
 SPY
-ask: 1.09275
-bid: 1.0927
-ask size: 5700000
-bid size: 1000000
-time: 3206
+ask: 1.0918
+bid: 1.09175
+ask size: 2183000
+bid size: 7683000
+time: 2340
 
 DIA
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
-time: 3209
+ask: 1.5263
+time: 2599
 
-IWM
-ask: 0
-bid: 0
-ask size: 0
-bid size: 0
+SPY
+ask: 1.0918
+bid: 1.09175
+ask size: 2183000
+bid size: 7683000
+time: 2614
+
+DIA
+ask: 1.5263

@@ -27,21 +27,23 @@ void waitforuserend()
 }
 
 
-class ResponseFromTWS : public EWrapperL0
+class ResponseFromTWS : public EWrapperL0		//this implementation will only support up to 100 tickerId's - limited by array size
 {
 public:
 
-	double m_priceAsk;
+	double m_priceAsk[100];
 	double m_priceBid;
 	double m_BidSize;
 	double m_AskSize;
+
+	
 
 	virtual void tickPrice(TickerId tickerId, TickType field, double price, int canAutoExecute)
 	{
 		switch (field)
 		{
 		case TickType::ASK:
-			m_priceAsk = price;
+			m_priceAsk[tickerId] = price;
 			break;
 		case TickType::BID:
 			m_priceBid = price;
@@ -59,17 +61,38 @@ public:
 		case TickType::ASK_SIZE:
 			m_AskSize = double(size);
 			break;
-
 		}
 	}
 };
 
-void GetContractDetails(Contract & spyContract)
+void GetContractDetails(Contract & spyContract, int contract) //1-EUR, 2-GBP, 3-SPY, 4-DIA, 5-IWM 
 {
 
 	// use either set to get what you want. both work
 	//forex (GBP) works 24/7 mon-friday
-
+	switch (contract)
+	{case 1:
+		spyContract.symbol = "EUR";
+		spyContract.secType = *SecType::CASH;		//"STK"
+		spyContract.currency = "USD";
+		spyContract.exchange = *Exchange::IDEALPRO;	//"SMART";
+		return;
+	case 2:
+		spyContract.symbol	= "SPY";
+		spyContract.secType	= *SecType::STK;		//"STK"
+		spyContract.currency	= "USD";
+		spyContract.exchange	= *Exchange::ARCA;	//"SMART";
+		//spyContract.primaryExchange = *Exchange::ARCA;	//"ARCA";
+		return;
+	case 2:
+		spyContract.symbol = "SPY";
+		spyContract.secType = *SecType::STK;		//"STK"
+		spyContract.currency = "USD";
+		spyContract.exchange = *Exchange::ARCA;	//"SMART";
+				
+		return;
+	
+	}
 	spyContract.symbol = "EUR";
 	spyContract.secType = *SecType::CASH;		//"STK"
 	spyContract.currency = "USD";
@@ -97,15 +120,16 @@ int StartTWSConn()
 	EClientL0*	pClientTWS = EClientL0::New(twsReply);
 	bool bIsConnected = pClientTWS->eConnect("", 7496);
 	
-	//second, DIAReply and pClientDIA will be DIA
-	ResponseFromTWS	 * DIAReply = new ResponseFromTWS();
-	EClientL0*	pClientDIA = EClientL0::New(DIAReply);
-	bIsConnected = pClientDIA->eConnect("", 7496);
+	////second, DIAReply and pClientDIA will be DIA
+	//ResponseFromTWS	 * DIAReply = new ResponseFromTWS();
+	//EClientL0*	pClientDIA = EClientL0::New(DIAReply);
+	////bIsConnected = pClientDIA->eConnect("", 7496);
+	//pClientDIA->eConnect("", 7496);
 
-	//second, IWMReply and pClientIWM will be IWM
-	ResponseFromTWS	 * IWMReply = new ResponseFromTWS();
-	EClientL0*	pClientIWM = EClientL0::New(IWMReply);
-	bIsConnected = pClientIWM->eConnect("", 7496);
+	////third, IWMReply and pClientIWM will be IWM
+	//ResponseFromTWS	 * IWMReply = new ResponseFromTWS();
+	//EClientL0*	pClientIWM = EClientL0::New(IWMReply);
+	//pClientIWM->eConnect("", 7496);
 
 	//the below works without launching it in a thread:
 	//setting up SPY with tickerId = 1;
@@ -121,7 +145,7 @@ int StartTWSConn()
 	//spyContract.currency = "USD";
 	//spyContract.exchange = *Exchange::IDEALPRO;	//"SMART";
 
-	diaContract.symbol	= "EUR";
+	diaContract.symbol	= "GBP";
 	diaContract.secType	= *SecType::CASH;		//"STK"
 	diaContract.currency	= "USD";
 	diaContract.exchange	= *Exchange::IDEALPRO;	//"SMART";
@@ -131,7 +155,10 @@ int StartTWSConn()
 	//diaContract.currency = "USD";
 	//diaContract.exchange = *Exchange::ARCA;	//"SMART";
 	tickerID = 2;
-	pClientDIA->reqMktData(tickerID, diaContract, "", false);
+	//pClientDIA->reqMktData(tickerID, diaContract, "", false);		//commented out?
+
+	pClientTWS->reqMktData(tickerID, diaContract, "", false);
+
 
 	//setting up IWM with tickerId = 3;
 	Contract	iwmContract;
@@ -140,7 +167,7 @@ int StartTWSConn()
 	iwmContract.currency = "USD";
 	iwmContract.exchange = *Exchange::ARCA;	//"SMART";
 	tickerID = 3;
-	pClientIWM->reqMktData(tickerID, iwmContract, "", false);
+	//pClientIWM->reqMktData(tickerID, iwmContract, "", false);		//commented out?
 
 
 	using namespace std;
@@ -166,13 +193,13 @@ int StartTWSConn()
 
 		for (int i = 1; i < 4; i++) {		// iterate through contracts 1,2,3
 
-			tickerId = i;
+			tickerID = i;
 			switch (i) {
 			case 1:
 				tempContract = spyContract;
 				contractName = "SPY";
 				pClientTWS->reqMktData(tickerID, spyContract, "", false);
-				ask = twsReply->m_priceAsk;
+				ask = twsReply->m_priceAsk[tickerID];
 				bid = twsReply->m_priceBid;
 				bidSize = twsReply->m_BidSize;
 				askSize = twsReply->m_AskSize;
@@ -193,45 +220,51 @@ int StartTWSConn()
 			case 2:
 				tempContract = diaContract;
 				contractName = "DIA";
-				pClientDIA->reqMktData(tickerID, diaContract, "", false);	//CHANGED
-				ask = DIAReply->m_priceAsk;							//CHANGED
-				bid = DIAReply->m_priceBid;
-				bidSize = DIAReply->m_BidSize;
-				askSize = DIAReply->m_AskSize;						//CHANGED UP TO HERE
+
+				//pClientTWS->reqMktData(tickerID, diaContract, "", false);
+				ask = twsReply->m_secondBid;
+
+
+
+				//pClientDIA->reqMktData(tickerID, diaContract, "", false);	//CHANGED
+				//ask = DIAReply->m_priceAsk;							//CHANGED
+				//bid = DIAReply->m_priceBid;
+				//bidSize = DIAReply->m_BidSize;
+				//askSize = DIAReply->m_AskSize;						//CHANGED UP TO HERE
 
 				time = clock();
 				cout << setprecision(15);
 
 				cout << endl << contractName << endl;
-				cout << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
+				cout << "ask: " << ask << endl;
 
 				out << setprecision(15);
 
 				out << "time: " << time << endl;
 				out << endl << contractName << endl;
-				out << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
+				out << "ask: " << ask << endl;
 
 				break;
 			case 3:
 				tempContract = iwmContract;
 				contractName = "IWM";
-				pClientIWM->reqMktData(tickerID, iwmContract, "", false);	//CHANGED
-				ask = IWMReply->m_priceAsk;							//CHANGED
-				bid = IWMReply->m_priceBid;
-				bidSize = IWMReply->m_BidSize;
-				askSize = IWMReply->m_AskSize;						//CHANGED UP TO HERE
+				//pClientIWM->reqMktData(tickerID, iwmContract, "", false);	//CHANGED
+				//ask = IWMReply->m_priceAsk;							//CHANGED
+				//bid = IWMReply->m_priceBid;
+				//bidSize = IWMReply->m_BidSize;
+				//askSize = IWMReply->m_AskSize;						//CHANGED UP TO HERE
 
-				time = clock();
-				cout << setprecision(15);
+				//time = clock();
+				//cout << setprecision(15);
 
-				cout << endl << contractName << endl;
-				cout << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
+				//cout << endl << contractName << endl;
+				//cout << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
 
-				out << setprecision(15);
+				//out << setprecision(15);
 
-				out << "time: " << time << endl;
-				out << endl << contractName << endl;
-				out << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
+				//out << "time: " << time << endl;
+				//out << endl << contractName << endl;
+				//out << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
 
 				break;
 			}
