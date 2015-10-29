@@ -1,100 +1,110 @@
-time: 354
-ask: 1.5307
-bid: 1.53065
-ask size: 4450000
+time: 259
+
+SPY
+ask: 1.0917
+bid: 1.09165
+ask size: 1183000
+bid size: 11683000
+time: 265
+
+DIA
+ask: 1.5264
+time: 517
+
+SPY
+ask: 1.09175
+bid: 1.0917
+ask size: 1700000
 bid size: 1000000
-time: 609
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 864
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 1118
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 1372
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 1628
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 1884
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 2142
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 2398
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 2655
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 2911
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 3166
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 3421
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 3678
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 3934
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 4189
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 4449
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 4717
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 4979
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
-time: 5235
-ask: 1.5307
-bid: 1.53065
-ask size: 2450000
-bid size: 1000000
+time: 520
+
+DIA
+ask: 1.5264
+time: 773
+
+SPY
+ask: 1.09175
+bid: 1.0917
+ask size: 10883000
+bid size: 2500000
+time: 776
+
+DIA
+ask: 1.52635
+time: 1029
+
+SPY
+ask: 1.09175
+bid: 1.5262
+ask size: 2200000
+bid size: 10683000
+time: 1033
+
+DIA
+ask: 1.5262
+time: 1286
+
+SPY
+ask: 1.09175
+bid: 1.5262
+ask size: 8700000
+bid size: 6820000
+time: 1291
+
+DIA
+ask: 1.5262
+time: 1544
+
+SPY
+ask: 1.0918
+bid: 1.5262
+ask size: 13983000
+bid size: 12883000
+time: 1548
+
+DIA
+ask: 1.5263
+time: 1802
+
+SPY
+ask: 1.0918
+bid: 1.09175
+ask size: 2783000
+bid size: 5183000
+time: 1806
+
+DIA
+ask: 1.5263
+time: 2059
+
+SPY
+ask: 1.0918
+bid: 1.09175
+ask size: 2283000
+bid size: 7683000
+time: 2063
+
+DIA
+ask: 1.5263
+time: 2321
+
+SPY
+ask: 1.0918
+bid: 1.09175
+ask size: 2183000
+bid size: 7683000
+time: 2340
+
+DIA
+ask: 1.5263
+time: 2599
+
+SPY
+ask: 1.0918
+bid: 1.09175
+ask size: 2183000
+bid size: 7683000
+time: 2614
+
+DIA
+ask: 1.5263
