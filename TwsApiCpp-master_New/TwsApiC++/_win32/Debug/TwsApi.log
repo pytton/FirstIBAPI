@@ -1,4 +1,4 @@
-﻿Build started 10/27/2015 22:25:52.
+﻿Build started 10/28/2015 19:48:01.
      1>Project "C:\Users\Michael\Code\FirstIBAPI\TwsApiCpp-master_New\TwsApiC++\_win32\TwsApi.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\Src /I..\Api /I..\..\source\PosixClient\Shared /I..\..\source\PosixClient\src /Z7 /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo".\Debug/" /Fd".\Debug/TwsApi.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Src\TwsApiL0.cpp
@@ -22,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.03
+Time Elapsed 00:00:01.70
