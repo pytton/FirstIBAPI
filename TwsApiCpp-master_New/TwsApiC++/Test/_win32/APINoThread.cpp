@@ -145,16 +145,21 @@ int StartTWSConn()
 	tickerID = 5;
 	pClientTWS->reqMktData(tickerID, myContract, "", false);
 	using namespace std;
-	ofstream out("output.txt");
-
+	ofstream out("myApiOutput.txt");
 	out << endl << "Time: " << "," << "Contract: " << "," << "Bid: " << "," << "Ask: " << "," << "Bid size: " << "," << "Ask size: " << endl;
 
 	clock_t time;
 	time = clock();
 
-	for (int i = 0; i < 50; i++)
+	cout << endl << "How many seconds do you want to capture?" << endl;
+	int duration;
+	cin >> duration;
+
+	duration = duration * 10;
+
+	for (int i = 0; i < duration; i++)
 	{
-		int Wait = 250;
+		int Wait = 100;
 		Sleep(Wait);
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 		cout << "sleeping for: " << Wait << " ms" << endl;
@@ -218,6 +223,8 @@ int StartTWSConn()
 
 
 	cout << endl << "Finished." << endl;
+	
+	out.close();
 	waitforuserend();
 
 	////////////////////////////////////////////////////////////////
