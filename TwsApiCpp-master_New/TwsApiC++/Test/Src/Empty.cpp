@@ -8,9 +8,9 @@
 int StartTWSConn();
 
 
-//class MyEWrapper: public EWrapperL0
-//{
-//};
+class MyEWrapper: public EWrapperL0
+{
+};
 
 
 

@@ -89,25 +89,25 @@ void GetContractDetails(Contract & myContract, int contract) //1-EUR, 2-GBP, 3-S
 		myContract.symbol = "SPY";
 		myContract.secType = *SecType::STK;		//"STK"
 		myContract.currency = "USD";
-		myContract.exchange = *Exchange::ARCA;	//"SMART";
+		myContract.exchange = *Exchange::IB_SMART;	//"SMART";
 		return;
 	case 4:
 		myContract.symbol = "DIA";
 		myContract.secType = *SecType::STK;		//"STK"
 		myContract.currency = "USD";
-		myContract.exchange = *Exchange::ARCA;	//"SMART";
+		myContract.exchange = *Exchange::IB_SMART;	//"SMART";
 		return;
 	case 5:
 		myContract.symbol = "IWM";
 		myContract.secType = *SecType::STK;		//"STK"
 		myContract.currency = "USD";
-		myContract.exchange = *Exchange::ARCA;	//"SMART";
+		myContract.exchange = *Exchange::IB_SMART;	//"SMART";
 		return;
 	default:
 		myContract.symbol = "SPY";
 		myContract.secType = *SecType::STK;		//"STK"
 		myContract.currency = "USD";
-		myContract.exchange = *Exchange::ARCA;	//"SMART";
+		myContract.exchange = *Exchange::IB_SMART;	//"SMART";
 		return;
 	}
 }
@@ -156,25 +156,33 @@ int StartTWSConn()
 	ofstream out3("myApiOutput3.txt"); out3 << setprecision(15);
 	ofstream out4("myApiOutput4.txt"); out4 << setprecision(15);
 	ofstream out5("myApiOutput5.txt"); out5 << setprecision(15);
-	out << endl << "Time: " << "," << "Contract: " << "," << "Bid: " << "," << "Ask: " << "," << "Bid size: " << "," << "Ask size: " << endl;
-
+	
 	clock_t time;
 	time = clock();
 
 	cout << endl << "How many seconds do you want to capture?" << endl;
 	int duration;
 	cin >> duration;
+	int Wait = 100;	//in miliseconds
+	cout << "Enter interval in ms: ";
+	cin >> Wait;
+	cout << endl << "Enter note (start time?): " << endl;
+	string note;
+	cin >> note;
 
-	duration = duration * 10;	//10 * 100 ms = 1 second
+	out << note << endl;
+	out << endl << "Time: " << "," << "Contract: " << "," << "Bid: " << "," << "Ask: " << "," << "Bid size: " << "," << "Ask size: " << endl;
 
-	for (int i = 0; i < duration; i++)
+	clock_t t;
+	t = clock();
+
+	while (	(	(	(float)((clock()) - t)	) / CLOCKS_PER_SEC)  < duration)
 	{
-		int Wait = 100;	//in miliseconds
 		Sleep(Wait);
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
-		cout << "sleeping for: " << Wait << " ms" << endl;
-		
-		string contractName ="";
+		cout << "sleeping for: " << Wait << " ms" << endl << ((clock() - t)/CLOCKS_PER_SEC) << " of " << duration << " seconds" << endl;
+
+		string contractName = "";
 		int tickerId = 1;
 
 		double ask;
@@ -182,7 +190,7 @@ int StartTWSConn()
 		double bidSize;
 		double askSize;
 
-		long serverTime=0;
+		long serverTime = 0;
 
 		pClientTWS->reqMktData(tickerID, myContract, "", false);
 		pClientTWS->reqCurrentTime();
@@ -192,56 +200,58 @@ int StartTWSConn()
 		for (int i = 1; i <= 5; i++) {		// iterate through contracts 1,2,3
 
 			tickerID = i;
-			
-				ask = twsReply->m_priceAsk[tickerID];
-				bid = twsReply->m_priceBid[tickerID];
-				bidSize = twsReply->m_BidSize[tickerID];
-				askSize = twsReply->m_AskSize[tickerID];
-				serverTime = twsReply->m_time;
 
+			ask = twsReply->m_priceAsk[tickerID];
+			bid = twsReply->m_priceBid[tickerID];
+			bidSize = twsReply->m_BidSize[tickerID];
+			askSize = twsReply->m_AskSize[tickerID];
+			serverTime = twsReply->m_time;
+
+			time = clock();
+			cout << setprecision(15);
+
+			switch (i) {
+			case 1:
 				time = clock();
-				cout << setprecision(15);
-								
-				switch (i) {
-				case 1:
-					time = clock();
-					contractName = "EUR";
-					out1 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
-					break;
-				case 2:
-					time = clock();
-					contractName = "GBP";
-					out2 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
-					break;
-				case 3:
-					time = clock();
-					contractName = "SPY";
-					out3 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
-					break;
-				case 4:
-					time = clock();
-					contractName = "DIA";
-					out4 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
-					break;
-				case 5:
-					time = clock();
-					contractName = "IWM";
-					out5 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
-					break;
-				}
+				contractName = "EUR";
+				out1 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
+				break;
+			case 2:
+				time = clock();
+				contractName = "GBP";
+				out2 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
+				break;
+			case 3:
+				time = clock();
+				contractName = "SPY";
+				out3 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
+				break;
+			case 4:
+				time = clock();
+				contractName = "DIA";
+				out4 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
+				break;
+			case 5:
+				time = clock();
+				contractName = "IWM";
+				out5 << serverTime << "," << time << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize << endl;
+				break;
+			}
 
-				cout << endl << contractName << endl;
-				cout << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
+			cout << endl << contractName << endl;
+			cout << "ask: " << ask << endl << "bid: " << bid << endl << "ask size: " << askSize << endl << "bid size: " << bidSize << endl;
 
-				out << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize;
+			out << "," << contractName << "," << bid << "," << ask << "," << bidSize << "," << askSize;
 
 		}
 		out << endl;
+	
 	}
 
-
 	cout << endl << "Finished." << endl;
-	
+	cout << t << "     " << (clock()) << endl;
+
+	out << endl << note << endl;
 	out.close(); out1.close(); out2.close(); out3.close(); out4.close(); out5.close();
 	waitforuserend();
 	pClientTWS->eDisconnect();

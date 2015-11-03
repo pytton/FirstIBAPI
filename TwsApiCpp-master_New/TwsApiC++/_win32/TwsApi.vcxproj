@@ -95,7 +95,7 @@
       <Culture>0x0813</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\Api\TwsApiD.lib</OutputFile>
+      <OutputFile>..\Api\TwsApi.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
